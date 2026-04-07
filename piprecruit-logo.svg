@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <!-- Body gradient -->
+    <radialGradient id="bodyGrad" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#FFE082"/>
+      <stop offset="70%" stop-color="#FFD54F"/>
+      <stop offset="100%" stop-color="#FFC107"/>
+    </radialGradient>
+    <!-- Head gradient -->
+    <radialGradient id="headGrad" cx="45%" cy="35%" r="55%">
+      <stop offset="0%" stop-color="#FFE89A"/>
+      <stop offset="60%" stop-color="#FFD54F"/>
+      <stop offset="100%" stop-color="#FFCA28"/>
+    </radialGradient>
+    <!-- Belly gradient -->
+    <radialGradient id="bellyGrad" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#FFF8E1"/>
+      <stop offset="100%" stop-color="#FFECB3"/>
+    </radialGradient>
+    <!-- Wing gradient -->
+    <radialGradient id="wingGrad" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#FFD54F"/>
+      <stop offset="100%" stop-color="#FFB300"/>
+    </radialGradient>
+    <!-- Eye shine -->
+    <radialGradient id="eyeGrad" cx="40%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="#555"/>
+      <stop offset="100%" stop-color="#1a1a1a"/>
+    </radialGradient>
+    <!-- Beak gradient -->
+    <linearGradient id="beakGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFB300"/>
+      <stop offset="100%" stop-color="#E65100"/>
+    </linearGradient>
+    <!-- Subtle shadow -->
+    <filter id="shadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.12"/>
+    </filter>
+    <!-- Soft glow for blush -->
+    <filter id="blush">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+  </defs>
+
+  <!-- Background circle -->
+  <circle cx="256" cy="256" r="250" fill="#FFF9E6"/>
+  <circle cx="256" cy="256" r="250" fill="none" stroke="#FFE082" stroke-width="4"/>
+
+  <!-- Main group with shadow -->
+  <g filter="url(#shadow)">
+
+    <!-- Left wing -->
+    <ellipse cx="138" cy="310" rx="42" ry="72" fill="url(#wingGrad)" transform="rotate(-15 138 310)"/>
+    <ellipse cx="142" cy="305" rx="30" ry="55" fill="#FFD54F" opacity="0.5" transform="rotate(-15 142 305)"/>
+
+    <!-- Right wing -->
+    <ellipse cx="374" cy="310" rx="42" ry="72" fill="url(#wingGrad)" transform="rotate(15 374 310)"/>
+    <ellipse cx="370" cy="305" rx="30" ry="55" fill="#FFD54F" opacity="0.5" transform="rotate(15 370 305)"/>
+
+    <!-- Body -->
+    <ellipse cx="256" cy="320" rx="120" ry="135" fill="url(#bodyGrad)"/>
+
+    <!-- Belly -->
+    <ellipse cx="256" cy="355" rx="80" ry="90" fill="url(#bellyGrad)"/>
+
+    <!-- Feet -->
+    <g fill="url(#beakGrad)">
+      <!-- Left foot -->
+      <path d="M200 435 L170 475 L195 460 L185 485 L210 462 L205 488 L225 455 Z"/>
+      <!-- Right foot -->
+      <path d="M312 435 L342 475 L317 460 L327 485 L302 462 L307 488 L287 455 Z"/>
+    </g>
+
+    <!-- Head -->
+    <circle cx="256" cy="175" r="100" fill="url(#headGrad)"/>
+
+    <!-- Crest/Tuft -->
+    <g fill="#FFB300">
+      <ellipse cx="240" cy="82" rx="10" ry="28" transform="rotate(-10 240 82)"/>
+      <ellipse cx="256" cy="76" rx="10" ry="32"/>
+      <ellipse cx="272" cy="82" rx="10" ry="28" transform="rotate(10 272 82)"/>
+    </g>
+    <g fill="#FFC107">
+      <ellipse cx="240" cy="88" rx="7" ry="20" transform="rotate(-10 240 88)"/>
+      <ellipse cx="256" cy="83" rx="7" ry="23"/>
+      <ellipse cx="272" cy="88" rx="7" ry="20" transform="rotate(10 272 88)"/>
+    </g>
+
+    <!-- Blush -->
+    <ellipse cx="185" cy="200" rx="25" ry="15" fill="#FFAB91" opacity="0.4" filter="url(#blush)"/>
+    <ellipse cx="327" cy="200" rx="25" ry="15" fill="#FFAB91" opacity="0.4" filter="url(#blush)"/>
+
+    <!-- Eyes -->
+    <g>
+      <!-- Left eye -->
+      <circle cx="218" cy="170" r="20" fill="url(#eyeGrad)"/>
+      <circle cx="212" cy="162" r="7" fill="#fff" opacity="0.9"/>
+      <circle cx="224" cy="174" r="3.5" fill="#fff" opacity="0.5"/>
+
+      <!-- Right eye -->
+      <circle cx="294" cy="170" r="20" fill="url(#eyeGrad)"/>
+      <circle cx="288" cy="162" r="7" fill="#fff" opacity="0.9"/>
+      <circle cx="300" cy="174" r="3.5" fill="#fff" opacity="0.5"/>
+    </g>
+
+    <!-- Beak -->
+    <path d="M238 205 Q256 245 274 205 Q256 225 238 205 Z" fill="url(#beakGrad)"/>
+    <!-- Beak highlight -->
+    <path d="M245 208 Q256 230 267 208 Q256 220 245 208 Z" fill="#FFB300" opacity="0.4"/>
+
+    <!-- Smile line under beak -->
+    <path d="M242 218 Q256 228 270 218" fill="none" stroke="#E65100" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
+
+  </g>
+</svg>
